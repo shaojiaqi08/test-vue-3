@@ -1,9 +1,14 @@
 <script setup lang="ts">
-    console.log(import.meta.env)
+    import Test3 from '@/views/test3/index.vue'
+    function getRandom(){
+      return Math.ceil(Math.random() * 100)
+    }
 </script>
 
 <template>
-  12312
+  1231
+  <a-button type="primary">Primary Button</a-button>
+  <Test3 :random="getRandom()"/>
 </template>
 
 <style scoped>
