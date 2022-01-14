@@ -7,8 +7,6 @@
 
 <template>
   1231
-  <a-button type="primary">Primary Button</a-button>
-  <Test3 :random="getRandom()"/>
 </template>
 
 <style scoped>

@@ -15,7 +15,15 @@ export const routes: Array<RouteRecordRaw> = [
             {
                 path: '/test2',
                 name: 'test2',
-                component: () => import('@/views/test2/index.vue')
+                component: () => import('@/views/test2/index.vue'),
+                redirect: '/test2/test2-1',
+                children: [
+                    {
+                        path: 'test2-1',
+                        name: 'test2-1',
+                        component: () => import('@/views/test2-1/index.vue')
+                    }
+                ]
             }
         ]
     },
