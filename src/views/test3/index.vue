@@ -3,15 +3,21 @@
 </template>
 
 <script lang="ts" setup>
+  // import {defineEmits, defineProps} from 'vue'
+  import {watch} from 'vue'
 const props = defineProps<{
   random: number
   }>()
 
-console.log(props)
+  watch(() => props.random, (newVal) => {
+    console.log(props)
+  })
 
-const emit = defindEmits<{
-  (e: 'talk', value: string): void
-}>()
+console.log(props.random)
+
+// const emit = defineEmits<{
+//   (e: 'talk', value: string): void
+// }>()
 </script>
 
 <style scoped>
