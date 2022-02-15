@@ -1,5 +1,5 @@
 <template>
-  <LayoutAside></LayoutAside>
+<!--  <LayoutAside></LayoutAside>-->
   <LayoutContent></LayoutContent>
 </template>
 
