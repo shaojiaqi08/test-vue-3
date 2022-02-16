@@ -1,24 +1,16 @@
 <script setup lang="ts">
-  import {reactive} from 'vue'
-  import VirtualScroll from '@/components/virtual-scroll.vue'
-  import ListItem from './list-item.vue'
-  interface DataType {
-    list: Array<ItemType | null>
-  }
-  interface ItemType{
-    id: number
-    title: string
-    content: string
-  }
+  import { reactive } from 'vue'
+  import { DataType } from './types.ts'
+
   const data: DataType = reactive({
     list: []
   })
 
-  for(let i = 0; i < 1000; i++){
+  for ( let i = 0; i < 1000; i++ ) {
     data.list.push({
       id: i,
-      title: `标题${i}`,
-      content: `内容${i}`,
+      title: `标题${ i }`,
+      content: `内容${ i }`,
     })
   }
 </script>
