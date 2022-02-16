@@ -9,12 +9,15 @@ import { onMounted, nextTick, useSlots, ref } from "vue";
 
 onMounted(() => {
   nextTick(() => {
-    console.log(slotRef)
+    // console.log(slotRef)
   })
 })
-defineExpose({
-  name: 'virtual-scroll'
-})
+</script>
+
+<script lang="ts">
+  export default {
+    name: 'virtual-scroll'
+  }
 </script>
 
 <style scoped lang="less">

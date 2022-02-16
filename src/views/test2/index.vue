@@ -25,9 +25,9 @@
 
 <template>
   <div class="page-container">
-    <VirtualScroll>
+    <virtual-scroll>
       <list-item v-for="item in data.list" :key="item.id" :data="item"/>
-    </VirtualScroll>
+    </virtual-scroll>
   </div>
 </template>
 
