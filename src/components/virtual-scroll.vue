@@ -1,7 +1,7 @@
 <template>
   <div class="virtual-scroll-container" @scroll="scrollHandel">
     <div :style="`height:${totalHeight}px`" class="virtual-list"></div>
-    <div :style="`transform: translateY(${transHeight}px)`" class="container-list">
+    <div :style="`top: ${transHeight}px`" class="container-list">
       <div class="list-item" v-for="item in visitData" :key="item.id" :ref="setItemRef">
         <slot :item="item"></slot>
       </div>
@@ -12,7 +12,6 @@
 <script lang="ts" setup>
 import { ref, withDefaults, Ref, onBeforeUpdate, computed } from "vue";
 
-// declare function requireRef<T = any>(): Ref<T>;
 export interface ItemType {
   id: number
   title: string
@@ -24,6 +23,7 @@ const props = withDefaults(defineProps<{
   height: number
   beforeItem: number
   afterItem: number
+  initCount: number
 }>(), {
   beforeItem: 2,
   afterItem: 2
@@ -88,7 +88,7 @@ onBeforeUpdate(() => {
   position: absolute;
   left: 0;
   right: 0;
-  top: 0;
+  //top: 0;
   bottom: 0;
 }
 </style>
