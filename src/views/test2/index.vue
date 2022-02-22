@@ -8,7 +8,7 @@ const data: DataType = reactive({
   list: []
 })
 
-for (let i = 0; i < 1000; i++) {
+for (let i = 0; i < 100; i++) {
   data.list.push({
     id: i,
     title: `标题${ i }`,
@@ -19,13 +19,13 @@ for (let i = 0; i < 1000; i++) {
 
 <template>
   <div class="page-container">
-    <virtual-scroll>
-      <list-item v-for="item in data.list" :key="item.id">
+    <virtual-scroll :init-count="20" :data-list="data.list" :height="800" :before-item="2" :after-item="2">
+      <template #default="{item}">
         <div>
           <h3>{{ item.title }}</h3>
           <span>{{ item.content }}</span>
         </div>
-      </list-item>
+      </template>
     </virtual-scroll>
   </div>
 </template>
@@ -35,5 +35,7 @@ for (let i = 0; i < 1000; i++) {
   width: 375px;
   height: 800px;
   border: 1px solid #333;
+  position: relative;
+  overflow: hidden;
 }
 </style>
