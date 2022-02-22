@@ -19,9 +19,9 @@ for (let i = 0; i < 100; i++) {
 
 <template>
   <div class="page-container">
-    <virtual-scroll :init-count="20" :data-list="data.list" :height="800" :before-item="2" :after-item="2">
+    <virtual-scroll :data-list="data.list" :height="798" :before-item="2" :after-item="2">
       <template #default="{item}">
-        <div>
+        <div class="item">
           <h3>{{ item.title }}</h3>
           <span>{{ item.content }}</span>
         </div>
@@ -37,5 +37,9 @@ for (let i = 0; i < 100; i++) {
   border: 1px solid #333;
   position: relative;
   overflow: hidden;
+
+  .item{
+    height: 56px;
+  }
 }
 </style>
