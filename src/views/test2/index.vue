@@ -7,10 +7,13 @@ import VirtualScroll from '@/components/virtual-scroll.vue'
 const data: DataType = reactive({
   list: []
 })
-let content = ``
+
 let temp = 'Invalid string length'
 for (let i = 0; i < 100; i++) {
-  content = content + temp
+  let content = ''
+  for(let j = 0; j < Math.ceil(Math.random() * 30); j++){
+    content += temp
+  }
   data.list.push({
     id: i,
     title: `标题${ i }`,
@@ -21,7 +24,7 @@ for (let i = 0; i < 100; i++) {
 
 <template>
   <div class="page-container">
-    <virtual-scroll :init-count="10" :data-list="data.list" :height="798" :before-item="2" :after-item="2">
+    <virtual-scroll :init-count="10" :init-item-height="60" :data-list="data.list" :height="798" :before-item="2" :after-item="2">
       <template #default="{item}">
         <div class="item">
           <h3>{{ item.title }}</h3>
